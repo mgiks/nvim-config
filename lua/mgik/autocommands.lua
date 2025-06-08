@@ -45,18 +45,24 @@ local js_and_such_indentation_table = {
 	use_spaces = true,
 	indentation_level = 2,
 }
+local tsv_indentation_table = {
+	file_types = { "*.tsv" },
+	use_spaces = false,
+	indentation_level = 4,
+}
 local indentation_table_by_ft = {
 	go_indentation_table,
 	js_and_such_indentation_table,
+	tsv_indentation_table,
 }
 IndentationByFt(indentation_table_by_ft)
 
 -- Setting up transparent highlight groups
 vim.api.nvim_create_autocmd({ "InsertEnter", "BufEnter", "BufNewFile" }, {
 	pattern = "*",
-	callback = function() 
-        Set_colors()
-    end
+	callback = function()
+		Set_colors()
+	end,
 })
 
 -- Setting up yank colorization

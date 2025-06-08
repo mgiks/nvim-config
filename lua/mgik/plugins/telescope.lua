@@ -6,19 +6,11 @@ return {
 		"Telescope",
 	},
 	keys = {
-		{
-			"<leader>fr",
-			function()
-				require("telescope.builtin").find_files({
-					cwd = require("oil").get_current_dir(),
-				})
-			end,
-		},
 		{ "<leader>fu", "<cmd>Telescope find_files<cr>" },
 		{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
-		{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
 		{ "<leader>fs", "<cmd>Telescope git_status<cr>" },
-		{ "<leader>fc", "<cmd>Telescope git commits<cr>" },
+		{ "<leader>fc", "<cmd>Telescope git_commits<cr>" },
+		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>" },
 	},
 	opts = {},
 }

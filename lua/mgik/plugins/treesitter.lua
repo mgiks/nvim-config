@@ -11,6 +11,7 @@ return {
 				additional_vim_regex_highlighting = false,
 			},
 			ensure_installed = {
+				"sql",
 				"json",
 				"jsonc",
 				"javascript",
