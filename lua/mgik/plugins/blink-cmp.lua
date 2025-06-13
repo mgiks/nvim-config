@@ -2,6 +2,7 @@ return {
 	"saghen/blink.cmp",
 	version = "*",
 	event = { "LspAttach" },
+	dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 	opts = {
 		keymap = {
 			preset = "default",
@@ -12,6 +13,7 @@ return {
 			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
 		},
+		snippets = { preset = "luasnip" },
 		sources = { default = { "lsp", "path", "snippets", "buffer" } },
 		completion = {
 			list = { selection = { preselect = true, auto_insert = true } },

@@ -45,6 +45,11 @@ local js_and_such_indentation_table = {
 	use_spaces = true,
 	indentation_level = 2,
 }
+local c_and_such = {
+	file_types = { "*.c, *.cpp" },
+	use_spaces = true,
+	indentation_level = 4,
+}
 local tsv_indentation_table = {
 	file_types = { "*.tsv" },
 	use_spaces = false,
@@ -54,6 +59,7 @@ local indentation_table_by_ft = {
 	go_indentation_table,
 	js_and_such_indentation_table,
 	tsv_indentation_table,
+	c_and_such,
 }
 IndentationByFt(indentation_table_by_ft)
 

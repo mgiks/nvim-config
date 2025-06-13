@@ -10,6 +10,11 @@ return {
 			stylua = {
 				append_args = { "--column-width=80" },
 			},
+			clang_format = {
+				append_args = {
+					"-style=file:/home/mgik/.config/clang-format/clang-format",
+				},
+			},
 		},
 		formatters_by_ft = {
 			go = { "gofmt" },
@@ -25,6 +30,7 @@ return {
 			sh = { "shfmt" },
 			tmux = { "shfmt" },
 			sql = { "sleek" },
+			c = { "clang_format" },
 		},
 		format_on_save = { timeout_ms = 100, lsp_fallback = false },
 	},
