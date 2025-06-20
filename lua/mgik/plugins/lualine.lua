@@ -59,7 +59,7 @@ return {
 		options = {
 			theme = theme(),
 			disabled_filetypes = { "oil", "undotree", "telescope" },
-			section_separators = { left = "", right = "" },
+			section_separators = { left = "┃", right = "┃" },
 			component_separators = { left = "", right = "" },
 		},
 		sections = {
