@@ -27,6 +27,8 @@ return {
 			typescriptreact = { "deno_fmt" },
 			html = { "deno_fmt" },
 			css = { "deno_fmt" },
+			scss = { "deno_fmt" },
+			sass = { "deno_fmt" },
 			sh = { "shfmt" },
 			tmux = { "shfmt" },
 			sql = { "sleek" },

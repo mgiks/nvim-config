@@ -12,6 +12,7 @@ return {
 			},
 			ensure_installed = {
 				"sql",
+				"vala",
 				"json",
 				"jsonc",
 				"javascript",
