@@ -3,7 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
-		lint.linters_by_ft = { go = { "golangcilint" } }
+		lint.linters_by_ft = { go = { "golangcilint" }, py = { "ruff" } }
 
 		local lint_augroup =
 			vim.api.nvim_create_augroup("lint", { clear = true })
