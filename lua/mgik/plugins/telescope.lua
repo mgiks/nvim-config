@@ -12,5 +12,16 @@ return {
 		{ "<leader>fc", "<cmd>Telescope git_commits<cr>" },
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>" },
 	},
-	opts = {},
+	opts = {
+		defaults = {
+			mappings = {
+				i = {
+					["<C-N"] = false,
+					["<C-P>"] = false,
+					["<C-j>"] = require("telescope.actions").move_selection_next,
+					["<C-k>"] = require("telescope.actions").move_selection_previous,
+				},
+			},
+		},
+	},
 }
