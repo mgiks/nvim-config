@@ -22,7 +22,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Hyprlang support
-vim.filetype.add({ pattern = { [".*/hypr,.*%conf"] = "hyprlang" } })
+vim.filetype.add({
+	pattern = {
+		[".*/hypr,.*%conf"] = "hyprlang",
+		[".env"] = "dotenv",
+	},
+})
+
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.hl", "hypr*conf" },
 	callback = function(_)
