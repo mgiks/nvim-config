@@ -35,6 +35,6 @@ return {
 			-- c = { "clang_format" },
 			python = { "ruff_organize_imports", "ruff_format" },
 		},
-		format_on_save = { timeout_ms = 100, lsp_fallback = false },
+		format_on_save = { timeout_ms = 100, lsp_fallback = true },
 	},
 }
