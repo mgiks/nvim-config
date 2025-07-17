@@ -7,6 +7,7 @@ return {
 			go = { "golangcilint" },
 			py = { "ruff" },
 			dotenv = { "dotenv_linter" },
+			lua = { "luacheck" },
 		}
 
 		local lint_augroup =
