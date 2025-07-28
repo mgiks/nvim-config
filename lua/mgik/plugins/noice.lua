@@ -1,6 +1,7 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
+	cond = false,
 	opts = {
 		views = {
 			popup = {
