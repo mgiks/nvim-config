@@ -22,8 +22,7 @@ opt.splitright = true
 opt.splitbelow = true -- When on, splitting a window will put the new window below the current one
 opt.termguicolors = true
 opt.fillchars = { eob = " " } -- Sets the filling character, "~" by default
-opt.guicursor =
-	"n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20,a:blinkwait100-blinkon400-blinkoff400"
+opt.guicursor = ""
 opt.smartindent = true
 opt.scrolloff = 8 -- The amount of space to be left when scrolling
 opt.hlsearch = false -- Highlighting when searching via "/"
@@ -36,6 +35,7 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 opt.cursorline = true
 opt.cursorlineopt = "number"
+opt.showmode = false
 vim.o.wrap = false -- Wrapping of text to none
 vim.o.shell = "bash" -- The shell to use
 vim.diagnostic.config({ virtual_text = true })
