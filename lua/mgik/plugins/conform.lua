@@ -32,9 +32,9 @@ return {
 			sh = { "shfmt" },
 			tmux = { "shfmt" },
 			sql = { "sleek" },
-			-- c = { "clang_format" },
+			c = { "clang_format" },
 			python = { "ruff_organize_imports", "ruff_format" },
 		},
-		format_on_save = { timeout_ms = 100, lsp_fallback = true },
+		format_on_save = { async = true, lsp_fallback = true },
 	},
 }
