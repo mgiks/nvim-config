@@ -2,8 +2,11 @@ return {
 	"saghen/blink.cmp",
 	version = "*",
 	event = { "LspAttach" },
-	dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 	opts = {
+		cmdline = {
+			keymap = { preset = "inherit" },
+			completion = { menu = { auto_show = true } },
+		},
 		keymap = {
 			preset = "default",
 			["<C-space>"] = {},
@@ -16,6 +19,7 @@ return {
 		snippets = { preset = "luasnip" },
 		sources = { default = { "lsp", "path", "snippets", "buffer" } },
 		completion = {
+			accept = { auto_brackets = { enabled = true } },
 			list = { selection = { preselect = true, auto_insert = true } },
 			ghost_text = { enabled = true },
 			menu = {
