@@ -36,6 +36,7 @@ opt.colorcolumn = "80"
 opt.cursorline = true
 opt.cursorlineopt = "number"
 opt.showmode = false
+opt.cmdheight = 0
 vim.o.wrap = false -- Wrapping of text to none
 vim.o.shell = "bash" -- The shell to use
 vim.diagnostic.config({ virtual_text = true })

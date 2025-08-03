@@ -30,6 +30,7 @@ return {
 				window = { border = "rounded", scrollbar = false },
 			},
 		},
+		fuzzy = { implementation = "prefer_rust" },
 		signature = {
 			enabled = true,
 			trigger = { enabled = true, show_on_insert = true },

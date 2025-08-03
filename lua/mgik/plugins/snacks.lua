@@ -12,7 +12,6 @@ return {
 			scope = { enabled = true, char = "|" },
 		},
 		notifier = { enabled = true },
-		quickfile = { enabled = true },
 		statuscolumn = {
 			left = { "mark", "sign" },
 			right = { "fold", "git" },
@@ -20,5 +19,6 @@ return {
 			git = { patterns = { "GitSign" } },
 			refresh = 50,
 		},
+		quickfile = {},
 	},
 }
