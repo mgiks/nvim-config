@@ -3,7 +3,6 @@ local detailed_view = false
 return {
 	"stevearc/oil.nvim",
 	priority = 1000,
-	lazy = false,
 	opts = {
 		watch_for_changes = true,
 		skip_confirm_for_simple_edits = true,

@@ -20,17 +20,6 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>bn", "<CMD>bnext<CR>")
 vim.keymap.set("n", "<leader>bp", "<CMD>bprev<CR>")
 vim.keymap.set("n", "<leader>bc", "<CMD>bprev<CR>")
-vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
-	if not require("noice.lsp").scroll(4) then
-		return "<c-f>"
-	end
-end, { silent = true, expr = true })
-
-vim.keymap.set({ "n", "i", "s" }, "<c-b>", function()
-	if not require("noice.lsp").scroll(-4) then
-		return "<c-b>"
-	end
-end, { silent = true, expr = true })
 
 vim.keymap.set("n", "<leader>r", function()
 	local cmdId

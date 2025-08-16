@@ -40,3 +40,4 @@ opt.cmdheight = 0
 vim.o.wrap = false -- Wrapping of text to none
 vim.o.shell = "bash" -- The shell to use
 vim.diagnostic.config({ virtual_text = true })
+vim.o.winborder = "rounded"

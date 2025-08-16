@@ -4,20 +4,33 @@ vim.lsp.handlers["textDocument/hover"] =
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
 		local opts = { buffer = event.buf }
-
 		vim.keymap.set("n", "K", function()
 			vim.lsp.buf.hover()
 		end, opts)
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-		vim.keymap.set("n", "go", vim.lsp.buf.type_definition, opts)
-		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-		vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
-		vim.keymap.set({ "n", "x" }, "<F3>", function()
-			vim.lsp.buf.format({ async = true })
-		end, opts)
-		vim.keymap.set("n", "<F4>", vim.lsp.buf.code_action, opts)
+		vim.keymap.set(
+			"n",
+			"gd",
+			require("telescope.builtin").lsp_definitions,
+			opts
+		)
+		vim.keymap.set(
+			"n",
+			"gr",
+			require("telescope.builtin").lsp_references,
+			opts
+		)
+		vim.keymap.set(
+			"n",
+			"gi",
+			require("telescope.builtin").lsp_implementations,
+			opts
+		)
+		vim.keymap.set(
+			"n",
+			"gD",
+			require("telescope.builtin").lsp_type_definitions,
+			opts
+		)
 	end,
 })
 
@@ -80,6 +93,6 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "BufEnter", "BufNewFile" }, {
 -- Setting up yank colorization
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
-		vim.highlight.on_yank()
+		vim.hl.on_yank()
 	end,
 })

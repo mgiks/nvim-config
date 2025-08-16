@@ -12,43 +12,21 @@ local theme = function()
 		replace = "#e46876",
 		command = "#e6c384",
 	}
+
+	local color_scheme = {
+		c = { fg = colors.white, bg = colors.transparent },
+		x = { fg = colors.white, bg = colors.transparent },
+		y = { fg = colors.white, bg = colors.transparent },
+		z = { fg = colors.white, bg = colors.red },
+	}
+
 	return {
-		inactive = {
-			c = { fg = colors.white, bg = colors.transparent },
-			x = { fg = colors.white, bg = colors.transparent },
-			y = { fg = colors.white, bg = colors.transparent },
-			z = { fg = colors.white, bg = colors.red },
-		},
-		visual = {
-			c = { fg = colors.white, bg = colors.transparent },
-			x = { fg = colors.white, bg = colors.transparent },
-			y = { fg = colors.white, bg = colors.transparent },
-			z = { fg = colors.white, bg = colors.red },
-		},
-		replace = {
-			c = { fg = colors.white, bg = colors.transparent },
-			x = { fg = colors.white, bg = colors.transparent },
-			y = { fg = colors.white, bg = colors.transparent },
-			z = { fg = colors.white, bg = colors.red },
-		},
-		normal = {
-			c = { fg = colors.white, bg = colors.transparent },
-			x = { fg = colors.white, bg = colors.transparent },
-			y = { fg = colors.white, bg = colors.transparent },
-			z = { fg = colors.white, bg = colors.red },
-		},
-		insert = {
-			c = { fg = colors.white, bg = colors.transparent },
-			x = { fg = colors.white, bg = colors.transparent },
-			y = { fg = colors.white, bg = colors.transparent },
-			z = { fg = colors.white, bg = colors.red },
-		},
-		command = {
-			c = { fg = colors.white, bg = colors.transparent },
-			x = { fg = colors.white, bg = colors.transparent },
-			y = { fg = colors.white, bg = colors.transparent },
-			z = { fg = colors.white, bg = colors.red },
-		},
+		inactive = color_scheme,
+		visual = color_scheme,
+		replace = color_scheme,
+		normal = color_scheme,
+		insert = color_scheme,
+		command = color_scheme,
 	}
 end
 
@@ -65,7 +43,7 @@ return {
 		sections = {
 			lualine_a = {},
 			lualine_b = {},
-			lualine_c = {},
+			lualine_c = { "mode" },
 			lualine_x = {
 				{
 					"filename",
@@ -87,7 +65,7 @@ return {
 					separator = { left = "", right = "" },
 				},
 			},
-			lualine_z = { "branch" },
+			lualine_z = {},
 		},
 		globalstatus = true,
 	},
