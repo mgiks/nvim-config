@@ -71,6 +71,12 @@ return {
 				"*.gif",
 				"*.webp",
 				"*.avif",
+				"*.PNG",
+				"*.JPG",
+				"*.JPEG",
+				"*.GIF",
+				"*.WEBP",
+				"*.AVIF",
 			},
 		})
 	end,

@@ -1,9 +1,10 @@
-require("mgik.settings")
 require("mgik.remaps")
-require("mgik.hightlight-groups")
-require("mgik.utils")
-require("mgik.autocommands")
+require("mgik.settings")
+require("mgik.colors")
+require("mgik.hyprlang_support")
+require("mgik.indentation")
 require("mgik.lazy")
+require("mgik.lsp")
 
 -- vim.o.background = "dark"
 -- vim.cmd.colorscheme("gruvbox-material")

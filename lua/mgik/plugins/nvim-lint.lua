@@ -3,11 +3,25 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
+		local luacheck = require("lint").linters.luacheck
+		luacheck.args = {
+			"--formatter",
+			"plain",
+			"--globals",
+			"vim",
+			"--codes",
+			"--ranges",
+			"-",
+		}
+
+		local sqlfluff = require("lint").linters.sqruff
+
 		lint.linters_by_ft = {
 			go = { "golangcilint" },
 			py = { "ruff" },
 			dotenv = { "dotenv_linter" },
 			lua = { "luacheck" },
+			sql = { "sqfluff" },
 		}
 
 		local lint_augroup =

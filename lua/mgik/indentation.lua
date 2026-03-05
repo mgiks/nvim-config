@@ -1,13 +1,27 @@
-function LinterCheck()
-	local linters = require("lint").get_running()
-	if #linters == 0 then
-		print("No linters running 󰦕 ")
-		return
-	end
-	print("󱉶 " .. table.concat(linters, ", "))
-end
+local indentation_table_by_ft = {
+	{
+		file_types = { "*.go" },
+		use_spaces = false,
+		indentation_level = 4,
+	},
+	{
+		file_types = { "*.tsx", "*.jsx", "*.js", "*.ts", "*.html", "*.css" },
+		use_spaces = true,
+		indentation_level = 2,
+	},
+	{
+		file_types = { "*.c, *.cpp" },
+		use_spaces = true,
+		indentation_level = 4,
+	},
+	{
+		file_types = { "*.tsv" },
+		use_spaces = false,
+		indentation_level = 4,
+	},
+}
 
-function IndentationByFt(indentation_table)
+local function indentByFt(indentation_table)
 	vim.api.nvim_create_augroup("AutoIndent", { clear = true })
 
 	for _, language_indentation_table in ipairs(indentation_table) do
@@ -24,3 +38,5 @@ function IndentationByFt(indentation_table)
 		})
 	end
 end
+
+indentByFt(indentation_table_by_ft)

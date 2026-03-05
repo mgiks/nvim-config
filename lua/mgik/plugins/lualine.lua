@@ -1,3 +1,11 @@
+local lint_progress = function()
+	local running_linters = require("lint").get_running()
+	if #running_linters == 0 then
+		return "󰦕"
+	end
+	return "󱉶 " .. table.concat(running_linters, ", ")
+end
+
 local theme = function()
 	local colors = {
 		white = "#c0c0c0",
@@ -65,7 +73,7 @@ return {
 					separator = { left = "", right = "" },
 				},
 			},
-			lualine_z = {},
+			lualine_z = { lint_progress },
 		},
 		globalstatus = true,
 	},
