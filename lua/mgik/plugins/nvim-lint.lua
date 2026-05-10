@@ -3,7 +3,8 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
-		local luacheck = require("lint").linters.luacheck
+
+		local luacheck = lint.linters.luacheck
 		luacheck.args = {
 			"--formatter",
 			"plain",
@@ -14,14 +15,20 @@ return {
 			"-",
 		}
 
-		local sqlfluff = require("lint").linters.sqruff
+		local sqlfluff = lint.linters.sqlfluff
+		sqlfluff.args = {
+			"lint",
+			"--dialect=postgres",
+			"--format=json",
+			"-",
+		}
 
 		lint.linters_by_ft = {
 			go = { "golangcilint" },
 			py = { "ruff" },
 			dotenv = { "dotenv_linter" },
 			lua = { "luacheck" },
-			sql = { "sqfluff" },
+			sql = { "sqlfluff" },
 		}
 
 		local lint_augroup =

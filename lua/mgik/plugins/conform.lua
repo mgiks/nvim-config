@@ -15,6 +15,9 @@ return {
 					"-style=file:/home/mgik/.config/clang-format/clang-format",
 				},
 			},
+			pg_format = {
+				append_args = { "-L", "-w", "80" },
+			},
 		},
 		formatters_by_ft = {
 			go = { "gofmt" },

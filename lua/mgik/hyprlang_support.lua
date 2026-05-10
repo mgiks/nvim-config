@@ -2,6 +2,10 @@ vim.filetype.add({
 	pattern = {
 		[".*/hypr,.*%conf"] = "hyprlang",
 		[".env"] = "dotenv",
+		["compose.yaml"] = "yaml.docker-compose",
+		["docker-compose.yml"] = "yaml.docker-compose",
+		["docker-compose.yaml"] = "yaml.docker-compose",
+		["compose.yml"] = "yaml.docker-compose",
 	},
 })
 
