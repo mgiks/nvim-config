@@ -1,45 +1,9 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
+	"mgiks/nvim-treesitter",
 	build = ":TSUpdate",
-	event = "LspAttach",
+	lazy = false,
+	branch = "main",
 	config = function()
-		local treesitter = require("nvim-treesitter.configs")
-
-		treesitter.setup({
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
-			ensure_installed = {
-				"sql",
-				"vala",
-				"json",
-				"jsonc",
-				"javascript",
-				"typescript",
-				"tsx",
-				"python",
-				"go",
-				"tsx",
-				"yaml",
-				"html",
-				"css",
-				"markdown",
-				"markdown_inline",
-				"bash",
-				"lua",
-				"vim",
-				"dockerfile",
-				"gitignore",
-				"c",
-				"cpp",
-				"rust",
-				"hyprlang",
-				"bash",
-			},
-			incremental_selection = {
-				enable = true,
-			},
-		})
+		require("nvim-treesitter").install({ "go", "javascript", "lua" })
 	end,
 }
